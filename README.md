@@ -85,6 +85,8 @@ The orchestration patterns are extracted into a standalone, **zero-dependency** 
 pip install aimmh-lib
 ```
 
+### Functional API
+
 ```python
 import asyncio
 from aimmh_lib import fan_out
@@ -96,13 +98,39 @@ async def call_model(model_id: str, messages: list[dict]) -> str:
 async def main():
     results = await fan_out(
         call_fn=call_model,
-        model_ids=["gpt-4o", "claude-3-5-sonnet", "gemini-1.5-pro"],
+        model_ids=["gpt-4o", "claude-sonnet-4-6", "gemini-2.0-flash"],
         messages=[{"role": "user", "content": "What is the best programming language?"}],
     )
     for r in results:
         print(f"{r.model_id}: {r.content}")
 
 asyncio.run(main())
+```
+
+### Instantiation API
+
+Bind a backend once and call any pattern as a method:
+
+```python
+from aimmh_lib import MultiModelHub
+
+hub = MultiModelHub(call_model)
+
+results = await hub.fan_out(["gpt-4o", "claude-sonnet-4-6"], messages)
+results = await hub.daisy_chain(["gpt-4o", "claude-sonnet-4-6", "gemini-2.0-flash"], "Explain gravity")
+results = await hub.council(["gpt-4o", "claude-sonnet-4-6"], "What is consciousness?")
+```
+
+### Stateful single-model conversations
+
+```python
+from aimmh_lib import ModelInstance
+
+gpt = ModelInstance(call_model, "gpt-4o", system_context="You are a Socratic tutor.")
+r1 = await gpt.send("What is entropy?")
+r2 = await gpt.send("Give me an example.")  # history carries over automatically
+print(gpt.history)
+gpt.clear()  # reset to fresh state
 ```
 
 All six patterns available: `fan_out`, `daisy_chain`, `room_all`, `room_synthesized`, `council`, `roleplay`.
