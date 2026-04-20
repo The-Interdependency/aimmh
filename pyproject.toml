@@ -8,7 +8,7 @@ version = "1.1.0"
 description = "Async multi-model conversation orchestration (fan_out, daisy_chain, room_all, room_synthesized, council, roleplay, MultiModelHub, ModelInstance)"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { file = "LICENSE" }
+license = { text = "MIT" }
 keywords = ["llm", "multi-model", "async", "conversation", "orchestration", "ai"]
 dependencies = []  # pure stdlib + asyncio; zero runtime deps for the core lib
 
@@ -29,6 +29,9 @@ dev = [
 Homepage = "https://emergentapp.interdependentway.org"
 Repository = "https://github.com/The-Interdependency/aimmh"
 "Bug Tracker" = "https://github.com/The-Interdependency/aimmh/issues"
+
+[tool.setuptools]
+license-files = []  # declared via license = { text = "MIT" }; suppress auto-discovery to avoid Metadata 2.4 dynamic field
 
 [tool.setuptools.packages.find]
 where = ["."]
