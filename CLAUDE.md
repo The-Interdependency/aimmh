@@ -7,7 +7,7 @@ Emergent is a multi-model AI hub: a FastAPI backend + React frontend that lets u
 ## Repository layout
 
 ```
-aimmh_lib/        # pip install aimmh-lib (MIT, zero runtime deps)
+aimmh_lib/        # pip install aimmh-lib (Apache-2.0, zero runtime deps)
   __init__.py     # public API surface
   conversations.py  # all orchestration logic
   adapters.py     # bridge to the aimmh backend (NOT imported by default)
@@ -24,7 +24,7 @@ frontend/         # React app (proprietary)
     components/
 
 pyproject.toml    # aimmh-lib package config
-LICENSE           # MIT (covers aimmh_lib only)
+LICENSE           # Apache-2.0 (covers aimmh_lib only)
 ```
 
 ## aimmh_lib public API
