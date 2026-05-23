@@ -90,3 +90,13 @@ twine upload dist/*
 - `services/llm.py` provides `generate_response()` (async generator) and `DEFAULT_REGISTRY` (model ID → provider mapping).
 - MongoDB via Motor for all persistence.
 - Environment: `MONGO_URI`, `JWT_SECRET`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `EMERGENT_LLM_KEY`.
+
+## Agent module-build doctrine
+
+Before adding a new module, route, service, adapter, schema, worker, engine,
+UI panel, migration, or experiment, read:
+
+`./.agents/skills/meta-module-build/SKILL.md`
+
+New module work should start with a `MODULE_BUILD` block. Unknown fields must
+be marked `hmmm`, not guessed.
