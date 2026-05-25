@@ -79,17 +79,20 @@ twine upload dist/*
 - Version: `1.1.0`
 - Repo: https://github.com/The-Interdependency/aimmh
 
-## Branches
-
-- `main` — stable, mirrors what's on PyPI
-- `claude/*` — Claude Code working branches; PR into main when complete
-
 ## Backend architecture notes
 
 - `server.py` handles auth (Google OAuth + JWT), conversation CRUD, multi-model streaming, Stripe payments, and the EDCM analysis engine.
 - `services/llm.py` provides `generate_response()` (async generator) and `DEFAULT_REGISTRY` (model ID → provider mapping).
 - MongoDB via Motor for all persistence.
 - Environment: `MONGO_URI`, `JWT_SECRET`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `EMERGENT_LLM_KEY`.
+
+## Git Workflow
+
+- Main branch: `main` (stable; mirrors what's on PyPI)
+- Feature branches: `feat/<description>`, `fix/<description>`, `docs/<description>`, and `claude/*` working branches — PR into `main` when complete
+- Commit style: Conventional Commits (`feat(aimmh):`, `fix(adapters):`, etc.)
+- Author: Erin Patrick Spencer (wayseer@interdependentway.org)
+- License: Apache 2.0 (covers `aimmh_lib`; `backend/` and `frontend/` are proprietary)
 
 ## Agent module-build doctrine
 
