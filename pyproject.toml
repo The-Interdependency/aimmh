@@ -8,7 +8,7 @@ version = "1.1.0"
 description = "Async multi-model conversation orchestration (fan_out, daisy_chain, room_all, room_synthesized, council, roleplay, MultiModelHub, ModelInstance)"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Apache-2.0" }
+license = { text = "AGPL-3.0-or-later" }
 keywords = ["llm", "multi-model", "async", "conversation", "orchestration", "ai"]
 dependencies = []  # pure stdlib + asyncio; zero runtime deps for the core lib
 
