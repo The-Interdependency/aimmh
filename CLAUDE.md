@@ -17,13 +17,13 @@ aimmh is a multi-model AI hub: a **FastAPI backend** + **React frontend** that l
 ## Repository layout
 
 ```
-aimmh_lib/            # pip install aimmh-lib — zero-dep async orchestration core (AGPL-3.0)
+aimmh_lib/            # pip install aimmh-lib — zero-dep async orchestration core (AGPL-3.0-or-later)
   __init__.py         # public API surface (re-exports from conversations.py)
   conversations.py    # all orchestration logic, ModelResult, CallFn, MultiModelHub, ModelInstance
   adapters.py         # bridge to the backend (make_call_fn); NOT imported by __init__
 
 backend/              # FastAPI service
-  server.py           # app factory, router wiring, health/AI-instruction endpoints
+  server.py           # module-level app = FastAPI(...) (not a factory fn), router wiring, health/AI-instruction endpoints
   config.py           # JWT_SECRET / algorithm / expiry constants
   db.py               # Motor client (reads MONGO_URL, DB_NAME)
   requirements.txt    # pinned backend deps (includes pytest, black, flake8, isort, mypy)
@@ -96,7 +96,7 @@ is required at startup in `server.py` — all three must be set or the app fails
 API surface is mounted under `/api/...`; the modern surface is versioned under `/api/v1/...`.
 `server.py` wires these routers: auth, agent_zero, v1_a0, v1_edcm, v1_system, registry, keys,
 v1_analysis, v1_lib, v1_hub, v1_hub_state, **payments_v2**, console. Liveness/readiness:
-`/health`, `/api/health`, `/ready`, `/api/ready` (readiness pings MongoDB). Note: `routes/chat.py`,
+`/health`, `/api/health`, `/ready`, `/api/ready` (readiness pings MongoDB), plus `/api/v1/health` (from `routes/v1_system.py`, mounted at prefix `/api/v1`). Note: `routes/chat.py`,
 `routes/export.py`, and `routes/payments.py` exist in the tree but are **not** mounted in `server.py`.
 
 ### Backend tests
