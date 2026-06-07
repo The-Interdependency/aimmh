@@ -2,7 +2,7 @@
 
 [![Live App](https://img.shields.io/badge/live-emergentapp.interdependentway.org-blue)](https://emergentapp.interdependentway.org)
 [![PyPI](https://img.shields.io/pypi/v/aimmh-lib)](https://pypi.org/project/aimmh-lib/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > Chat with GPT, Claude, Gemini, Grok, DeepSeek, and Perplexity **in parallel**.
 > Compare, synthesize, and chain their responses — all in one interface.
@@ -161,4 +161,4 @@ frontend/    # React UI
 
 ## License
 
-`aimmh_lib/` is licensed under the Apache License 2.0. The backend and frontend are proprietary — you may self-host for personal use but may not offer them as a competing hosted service.
+This project is licensed under the MIT License. See `LICENSE`. Previously released under AGPL-3.0-or-later with a commercial option; relicensed to MIT for frictionless adoption.
