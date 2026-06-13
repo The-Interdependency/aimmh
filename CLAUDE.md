@@ -8,7 +8,7 @@ aimmh is a multi-model AI hub: a **FastAPI backend** + **React frontend** that l
 - **Backend:** FastAPI · Motor (async MongoDB) · asyncio · Stripe · Google OAuth + JWT · emergentintegrations
 - **Frontend:** React 19 · Create React App via CRACO · Tailwind CSS · Shadcn/Radix UI · React Router 7 · Axios
 - **Library:** pure stdlib + asyncio, zero runtime dependencies
-- **License:** **MIT** (see `LICENSE`). Previously AGPL-3.0-or-later + commercial; relicensed to MIT.
+- **License:** **MPL-2.0** (see `LICENSE`). Relicensed from MIT to MPL-2.0 — weak copyleft: embed anywhere, but changes to these files must be published. (Earlier history: AGPL-3.0-or-later + commercial, then MIT.)
 - **PyPI package:** `aimmh-lib`, version **1.1.0**
 - **Repo:** https://github.com/The-Interdependency/aimmh
 
@@ -17,7 +17,7 @@ aimmh is a multi-model AI hub: a **FastAPI backend** + **React frontend** that l
 ## Repository layout
 
 ```
-aimmh_lib/            # pip install aimmh-lib — zero-dep async orchestration core (MIT)
+aimmh_lib/            # pip install aimmh-lib — zero-dep async orchestration core (MPL-2.0)
   __init__.py         # public API surface (re-exports from conversations.py)
   conversations.py    # all orchestration logic, ModelResult, CallFn, MultiModelHub, ModelInstance
   adapters.py         # bridge to the backend (make_call_fn); NOT imported by __init__
@@ -52,7 +52,7 @@ memory/               # PRD.md and working notes
 
 pyproject.toml        # aimmh-lib packaging (setuptools; excludes backend/ + frontend/)
 README.md             # public-facing project README
-LICENSE               # MIT
+LICENSE               # MPL-2.0
 ```
 
 ---
@@ -186,7 +186,7 @@ call = make_call_fn(user={"api_keys": {}})   # uses EMERGENT_LLM_KEY env for man
 - **Env var names matter:** the database uses `MONGO_URL` (not `MONGO_URI`) and `DB_NAME`; Stripe uses `STRIPE_API_KEY`. Do not invent `MONGO_URI`/`STRIPE_SECRET_KEY`.
 - **Backend tests are integration tests** against a deployed URL; treat them as smoke/regression checks, not local unit tests.
 - **`aimmh_lib` must stay dependency-free.** Anything needing fastapi/motor/emergentintegrations belongs under `[project.optional-dependencies].backend`, never in the core lib.
-- **License is MIT.** Keep license claims consistent across files when editing docs.
+- **License is MPL-2.0.** Keep license claims consistent across files when editing docs.
 - Frontend build uses **CRACO** (`craco.config.js`), not raw `react-scripts`; custom dev/webpack plugins live in `frontend/plugins/`.
 
 ---

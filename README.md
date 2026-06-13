@@ -2,7 +2,7 @@
 
 [![Live App](https://img.shields.io/badge/live-emergentapp.interdependentway.org-blue)](https://emergentapp.interdependentway.org)
 [![PyPI](https://img.shields.io/pypi/v/aimmh-lib)](https://pypi.org/project/aimmh-lib/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue.svg)](LICENSE)
 
 > Chat with GPT, Claude, Gemini, Grok, DeepSeek, and Perplexity **in parallel**.
 > Compare, synthesize, and chain their responses — all in one interface.
@@ -161,4 +161,4 @@ frontend/    # React UI
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE`. Previously released under AGPL-3.0-or-later with a commercial option; relicensed to MIT for frictionless adoption.
+This project is licensed under the Mozilla Public License 2.0 (MPL-2.0). See `LICENSE`. Relicensed from MIT to MPL-2.0 — weak copyleft: embed anywhere, but changes to these files must be published. (Earlier history: AGPL-3.0-or-later + commercial, then MIT.)
