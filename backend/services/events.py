@@ -1,3 +1,4 @@
+# ratios: loc_comments=90:10 imports_exports=6:5 calls_definitions=13:7
 """Append-only event engine aligned to spec.md v1.0.2-S9.
 
 Every interaction is an append-only event. No destructive edits.
@@ -117,3 +118,4 @@ def build_sentinel_context(
             "retrieval_log": [],
         },
     }
+# ratios: loc_comments=90:10 imports_exports=6:5 calls_definitions=13:7

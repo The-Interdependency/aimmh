@@ -1,3 +1,4 @@
+# ratios: loc_comments=45:0 imports_exports=6:4 calls_definitions=15:4
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -56,3 +57,4 @@ async def delete_hub_state(state_key: str, current_user: dict = Depends(get_curr
     if result.deleted_count == 0:
         return {"message": "State already absent"}
     return {"message": f"Deleted state {state_key}"}
+# ratios: loc_comments=45:0 imports_exports=6:4 calls_definitions=15:4

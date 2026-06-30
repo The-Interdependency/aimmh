@@ -1,3 +1,4 @@
+# ratios: loc_comments=56:0 imports_exports=4:7 calls_definitions=9:7
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -71,3 +72,4 @@ def merge_tier(current_tier: str, requested_tier: str) -> str:
     current = normalize_tier(current_tier)
     requested = normalize_tier(requested_tier)
     return requested if TIER_ORDER[requested] >= TIER_ORDER[current] else current
+# ratios: loc_comments=56:0 imports_exports=4:7 calls_definitions=9:7

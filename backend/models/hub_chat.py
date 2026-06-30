@@ -1,3 +1,4 @@
+# ratios: loc_comments=30:0 imports_exports=3:4 calls_definitions=7:4
 from __future__ import annotations
 
 from typing import List, Optional
@@ -38,3 +39,4 @@ class HubChatPromptOut(BaseModel):
 class HubChatPromptListResponse(BaseModel):
     prompts: List[HubChatPromptOut] = Field(default_factory=list)
     total: int = 0
+# ratios: loc_comments=30:0 imports_exports=3:4 calls_definitions=7:4

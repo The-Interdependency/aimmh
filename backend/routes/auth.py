@@ -1,3 +1,4 @@
+# ratios: loc_comments=485:6 imports_exports=11:13 calls_definitions=154:14
 from fastapi import APIRouter, HTTPException, Depends, Request, Response as FastAPIResponse
 from datetime import datetime, timezone, timedelta
 import uuid
@@ -552,3 +553,4 @@ async def logout(
         response.delete_cookie(key="session_token", path="/")
     response.delete_cookie(key="access_token", path="/")
     return {"message": "Logged out successfully"}
+# ratios: loc_comments=485:6 imports_exports=11:13 calls_definitions=154:14

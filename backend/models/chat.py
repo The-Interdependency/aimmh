@@ -1,3 +1,4 @@
+# ratios: loc_comments=44:6 imports_exports=3:7 calls_definitions=1:7
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any, Literal
 from datetime import datetime, timezone
@@ -62,3 +63,4 @@ class SynthesisRequest(BaseModel):
     selected_messages: List[str]
     target_models: List[str]
     synthesis_prompt: str
+# ratios: loc_comments=44:6 imports_exports=3:7 calls_definitions=1:7

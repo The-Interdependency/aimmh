@@ -1,3 +1,4 @@
+# ratios: loc_comments=674:7 imports_exports=14:7 calls_definitions=151:24
 from fastapi import APIRouter, HTTPException, Depends, Query
 from sse_starlette.sse import EventSourceResponse
 from datetime import datetime, timezone
@@ -760,3 +761,4 @@ async def catchup_models(
         "models": request.new_models,
         "message_count": len(messages)
     }
+# ratios: loc_comments=674:7 imports_exports=14:7 calls_definitions=151:24

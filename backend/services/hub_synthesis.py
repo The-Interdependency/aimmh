@@ -1,3 +1,4 @@
+# ratios: loc_comments=123:0 imports_exports=10:3 calls_definitions=31:4
 from __future__ import annotations
 
 from typing import List
@@ -136,3 +137,4 @@ async def get_synthesis_batch(user_id: str, synthesis_batch_id: str) -> HubSynth
     if not doc:
         raise HTTPException(status_code=404, detail="Synthesis batch not found")
     return HubSynthesisBatchOut(**doc)
+# ratios: loc_comments=123:0 imports_exports=10:3 calls_definitions=31:4

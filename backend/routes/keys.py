@@ -1,3 +1,4 @@
+# ratios: loc_comments=55:5 imports_exports=6:4 calls_definitions=21:5
 """User API key management — secure storage, never expose full keys."""
 
 import os
@@ -74,3 +75,4 @@ async def remove_key(
 async def universal_key_status():
     """Check if the universal key is valid."""
     return await validate_universal_key()
+# ratios: loc_comments=55:5 imports_exports=6:4 calls_definitions=21:5

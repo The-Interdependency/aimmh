@@ -1,3 +1,4 @@
+# ratios: loc_comments=72:6 imports_exports=8:3 calls_definitions=23:3
 """V1 EDCM endpoints — Energy-Dissonance Circuit Model."""
 
 import uuid
@@ -91,3 +92,4 @@ async def get_alerts(
         "metric_summary": {k: v["value"] for k, v in report["metrics"].items()},
         "provenance": build_provenance(model="edcm"),
     }
+# ratios: loc_comments=72:6 imports_exports=8:3 calls_definitions=23:3

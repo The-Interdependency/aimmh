@@ -1,3 +1,4 @@
+# ratios: loc_comments=499:0 imports_exports=11:6 calls_definitions=104:12
 from fastapi import APIRouter, Depends, HTTPException, Request
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any
@@ -557,3 +558,4 @@ async def get_payments_summary(current_user: dict = Depends(get_current_user)):
         estimated_usage_cost_usd=estimated_cost,
         total_estimated_tokens=total_tokens,
     )
+# ratios: loc_comments=499:0 imports_exports=11:6 calls_definitions=104:12

@@ -1,3 +1,4 @@
+# ratios: loc_comments=270:0 imports_exports=9:4 calls_definitions=98:8
 from __future__ import annotations
 
 import asyncio
@@ -292,3 +293,4 @@ async def verify_registry(current_user: dict, registry: dict, mode: str = "light
         total_count=len(all_results),
         results=all_results,
     )
+# ratios: loc_comments=270:0 imports_exports=9:4 calls_definitions=98:8

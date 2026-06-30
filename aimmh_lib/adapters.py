@@ -1,3 +1,4 @@
+# ratios: loc_comments=30:25 imports_exports=7:1 calls_definitions=8:2
 """
 adapters.py — Bridge from aimmh_lib.conversations.CallFn to the aimmh backend.
 
@@ -67,3 +68,4 @@ def make_call_fn(
         return "".join(chunks)
 
     return call_fn
+# ratios: loc_comments=30:25 imports_exports=7:1 calls_definitions=8:2

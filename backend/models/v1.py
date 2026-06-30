@@ -1,3 +1,4 @@
+# ratios: loc_comments=164:7 imports_exports=3:28 calls_definitions=12:28
 """V1 API Pydantic models for the Multi-Model Hub."""
 
 from pydantic import BaseModel, Field
@@ -232,3 +233,4 @@ class KeyStatusResponse(BaseModel):
 class FeedbackRequest(BaseModel):
     message_id: str
     feedback: str  # "up" | "down"
+# ratios: loc_comments=164:7 imports_exports=3:28 calls_definitions=12:28

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# ratios: loc_comments=164:25 imports_exports=6:2 calls_definitions=67:2
 """
 Agent Zero /api/a0 endpoints validation test
 Testing on: https://aimmh-hub-1.preview.emergentagent.com
@@ -235,3 +235,4 @@ def test_a0_validation_endpoints():
 if __name__ == "__main__":
     success = test_a0_validation_endpoints()
     exit(0 if success else 1)
+# ratios: loc_comments=164:25 imports_exports=6:2 calls_definitions=67:2

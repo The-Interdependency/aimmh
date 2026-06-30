@@ -1,3 +1,4 @@
+# ratios: loc_comments=21:0 imports_exports=4:1 calls_definitions=2:2
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional
 import uuid
@@ -24,3 +25,4 @@ async def append_audit_event(
             "created_at": _iso_now(),
         }
     )
+# ratios: loc_comments=21:0 imports_exports=4:1 calls_definitions=2:2

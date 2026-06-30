@@ -1,3 +1,4 @@
+# ratios: loc_comments=170:45 imports_exports=4:11 calls_definitions=15:11
 """
 lib_models.py — Pydantic request/response models for the /api/v1/lib/ routes.
 
@@ -251,3 +252,4 @@ class LibResponse(BaseModel):
     results: list[LibModelResult]
     pattern: str
     thread_id: Optional[str] = None
+# ratios: loc_comments=170:45 imports_exports=4:11 calls_definitions=15:11

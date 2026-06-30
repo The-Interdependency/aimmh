@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# ratios: loc_comments=68:8 imports_exports=4:3 calls_definitions=33:3
 """
 Detailed validation of checkout session response
 """
@@ -97,3 +97,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# ratios: loc_comments=68:8 imports_exports=4:3 calls_definitions=33:3

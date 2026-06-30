@@ -1,3 +1,4 @@
+# ratios: loc_comments=99:3 imports_exports=23:7 calls_definitions=37:8
 from fastapi import FastAPI
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
@@ -126,3 +127,4 @@ async def ready_check():
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+# ratios: loc_comments=99:3 imports_exports=23:7 calls_definitions=37:8

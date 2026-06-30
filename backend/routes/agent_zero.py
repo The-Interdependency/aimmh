@@ -1,3 +1,4 @@
+# ratios: loc_comments=442:16 imports_exports=13:16 calls_definitions=131:27
 from fastapi import APIRouter, HTTPException, Depends, Query
 from datetime import datetime, timezone
 from typing import Literal
@@ -540,3 +541,4 @@ async def get_non_ui_export(
         format=format,
         current_user=current_user,
     )
+# ratios: loc_comments=442:16 imports_exports=13:16 calls_definitions=131:27

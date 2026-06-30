@@ -1,3 +1,4 @@
+# ratios: loc_comments=41:0 imports_exports=2:5 calls_definitions=2:5
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional, Literal
 
@@ -49,3 +50,4 @@ class A0NonUISynthesisRequest(BaseModel):
     global_context: Optional[str] = None
     model_roles: Optional[Dict[str, str]] = None
     history_limit: Optional[int] = Field(default=None, ge=0)
+# ratios: loc_comments=41:0 imports_exports=2:5 calls_definitions=2:5

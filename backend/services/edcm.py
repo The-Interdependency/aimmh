@@ -1,3 +1,4 @@
+# ratios: loc_comments=157:22 imports_exports=6:7 calls_definitions=62:14
 """EDCM (Energy-Dissonance Circuit Model) computation engine.
 
 Implements deterministic placeholder metrics from spec.md v1.0.2-S9:
@@ -219,3 +220,4 @@ def evaluate_edcm(
         "recommendations": [],
         "snapshot_id": f"snap_{uuid.uuid4().hex[:16]}",
     }
+# ratios: loc_comments=157:22 imports_exports=6:7 calls_definitions=62:14

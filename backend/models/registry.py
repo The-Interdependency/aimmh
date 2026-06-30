@@ -1,3 +1,4 @@
+# ratios: loc_comments=36:0 imports_exports=3:3 calls_definitions=3:3
 from __future__ import annotations
 
 from typing import List, Literal, Optional
@@ -43,3 +44,4 @@ class VerificationResponse(BaseModel):
     verified_count: int = 0
     total_count: int = 0
     results: List[VerificationResult] = Field(default_factory=list)
+# ratios: loc_comments=36:0 imports_exports=3:3 calls_definitions=3:3
