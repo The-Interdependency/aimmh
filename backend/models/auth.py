@@ -1,3 +1,4 @@
+# ratios: loc_comments=72:0 imports_exports=3:16 calls_definitions=3:16
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime, timezone
@@ -102,3 +103,4 @@ class ServiceAccountPolicyResponse(BaseModel):
 
 class ServiceAccountPolicyUpdateRequest(BaseModel):
     one_token_per_bot: bool
+# ratios: loc_comments=72:0 imports_exports=3:16 calls_definitions=3:16

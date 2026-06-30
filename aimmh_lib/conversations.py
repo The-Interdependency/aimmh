@@ -1,3 +1,4 @@
+# ratios: loc_comments=490:186 imports_exports=6:9 calls_definitions=125:26
 """
 conversations.py — Async multi-model conversation orchestration primitives.
 
@@ -788,3 +789,4 @@ class ModelInstance:
         self._history.append(user_turn)
         self._history.append({"role": "assistant", "content": content})
         return result
+# ratios: loc_comments=490:186 imports_exports=6:9 calls_definitions=125:26

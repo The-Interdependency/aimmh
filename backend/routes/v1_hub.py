@@ -1,3 +1,4 @@
+# ratios: loc_comments=346:0 imports_exports=13:28 calls_definitions=159:29
 from __future__ import annotations
 
 from typing import Any, Dict, List
@@ -414,3 +415,4 @@ async def get_chat_prompts(
 async def get_chat_prompt_detail(prompt_id: str, current_user: dict = Depends(get_current_user)):
     user_id = get_user_id(current_user)
     return await get_chat_prompt(user_id, prompt_id)
+# ratios: loc_comments=346:0 imports_exports=13:28 calls_definitions=159:29

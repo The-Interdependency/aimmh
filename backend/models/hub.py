@@ -1,3 +1,4 @@
+# ratios: loc_comments=161:0 imports_exports=4:21 calls_definitions=34:21
 from __future__ import annotations
 
 from typing import Any, Dict, List, Literal, Optional
@@ -206,3 +207,4 @@ class HubConnectionsResponse(BaseModel):
     fastapi_connections: Dict[str, Dict[str, str]]
     patterns: List[str]
     supports: Dict[str, bool]
+# ratios: loc_comments=161:0 imports_exports=4:21 calls_definitions=34:21

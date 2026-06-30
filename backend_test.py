@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# ratios: loc_comments=210:30 imports_exports=5:2 calls_definitions=86:11
 """
 Detailed backend regression test for AIMMH Hub
 Tests the 5 critical endpoints with detailed response information.
@@ -295,3 +295,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# ratios: loc_comments=210:30 imports_exports=5:2 calls_definitions=86:11

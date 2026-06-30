@@ -1,3 +1,4 @@
+# ratios: loc_comments=297:55 imports_exports=15:6 calls_definitions=88:14
 """
 v1_lib.py — FastAPI routes wrapping lib/ conversation patterns.
 
@@ -423,3 +424,4 @@ async def lib_roleplay(
         pattern="roleplay",
         thread_id=thread_id,
     )
+# ratios: loc_comments=297:55 imports_exports=15:6 calls_definitions=88:14

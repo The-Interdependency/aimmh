@@ -1,3 +1,4 @@
+# ratios: loc_comments=277:20 imports_exports=14:7 calls_definitions=92:12
 """Transcript analysis — upload, parse with LLM, apply EDCM per turn, generate report."""
 
 import uuid
@@ -362,3 +363,4 @@ async def get_report(
     if not report:
         raise HTTPException(status_code=404, detail="Report not found")
     return report
+# ratios: loc_comments=277:20 imports_exports=14:7 calls_definitions=92:12

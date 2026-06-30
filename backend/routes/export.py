@@ -1,3 +1,4 @@
+# ratios: loc_comments=106:1 imports_exports=12:1 calls_definitions=47:1
 from fastapi import APIRouter, HTTPException, Depends
 from fastapi.responses import Response
 from datetime import datetime, timezone
@@ -121,3 +122,4 @@ async def export_conversation(
             media_type="application/pdf",
             headers={"Content-Disposition": f'attachment; filename="conversation-{conversation_id[:8]}.pdf"'}
         )
+# ratios: loc_comments=106:1 imports_exports=12:1 calls_definitions=47:1

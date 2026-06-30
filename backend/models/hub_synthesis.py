@@ -1,3 +1,4 @@
+# ratios: loc_comments=40:0 imports_exports=3:5 calls_definitions=10:5
 from __future__ import annotations
 
 from typing import List, Optional
@@ -50,3 +51,4 @@ class HubSynthesisBatchOut(BaseModel):
 class HubSynthesisBatchListResponse(BaseModel):
     batches: List[HubSynthesisBatchOut] = Field(default_factory=list)
     total: int = 0
+# ratios: loc_comments=40:0 imports_exports=3:5 calls_definitions=10:5

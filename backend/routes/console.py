@@ -1,3 +1,4 @@
+# ratios: loc_comments=77:0 imports_exports=6:4 calls_definitions=24:5
 from fastapi import APIRouter, Depends, HTTPException, Query
 from datetime import datetime, timezone
 from typing import Dict, Any
@@ -92,3 +93,4 @@ async def update_context_log(
 
     updated = await db.context_logs.find_one({"id": entry_id, "user_id": user_id}, {"_id": 0})
     return updated
+# ratios: loc_comments=77:0 imports_exports=6:4 calls_definitions=24:5

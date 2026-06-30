@@ -1,3 +1,4 @@
+# ratios: loc_comments=500:0 imports_exports=11:5 calls_definitions=148:13
 from __future__ import annotations
 
 from typing import Dict, List, Optional
@@ -552,3 +553,4 @@ async def list_hub_instances(user_id: str, include_archived: bool = False, limit
 
 async def list_hub_groups(user_id: str, include_archived: bool = False, limit: int = 200) -> list[dict]:
     return await list_docs(HUB_GROUP_COLLECTION, user_id, include_archived=include_archived, limit=limit)
+# ratios: loc_comments=500:0 imports_exports=11:5 calls_definitions=148:13

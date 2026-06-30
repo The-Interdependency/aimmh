@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# ratios: loc_comments=330:43 imports_exports=7:2 calls_definitions=95:12
 """
 Service Account Authentication Flow Backend Test
 
@@ -446,3 +446,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+# ratios: loc_comments=330:43 imports_exports=7:2 calls_definitions=95:12

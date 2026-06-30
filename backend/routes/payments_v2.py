@@ -1,3 +1,4 @@
+# ratios: loc_comments=403:0 imports_exports=13:8 calls_definitions=104:13
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -443,3 +444,4 @@ async def get_hall_of_makers():
     cursor = db.hall_of_makers.find({"opt_in": True}, {"_id": 0}).sort("created_at", 1)
     docs = await cursor.to_list(500)
     return HallOfMakersResponse(entries=[HallMakerEntry(**doc) for doc in docs])
+# ratios: loc_comments=403:0 imports_exports=13:8 calls_definitions=104:13

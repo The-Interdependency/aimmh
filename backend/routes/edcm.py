@@ -1,3 +1,4 @@
+# ratios: loc_comments=147:9 imports_exports=6:5 calls_definitions=31:5
 from fastapi import APIRouter, HTTPException, Depends
 from datetime import datetime, timezone
 import logging
@@ -182,3 +183,4 @@ async def get_dashboard(current_user: dict = Depends(get_current_user)):
         "total_conversations": total_convs,
         "total_messages": total_msgs
     }
+# ratios: loc_comments=147:9 imports_exports=6:5 calls_definitions=31:5

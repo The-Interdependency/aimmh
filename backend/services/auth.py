@@ -1,3 +1,4 @@
+# ratios: loc_comments=113:2 imports_exports=11:7 calls_definitions=49:7
 import bcrypt
 import jwt
 import logging
@@ -141,3 +142,4 @@ async def get_current_user(
 def get_user_id(user: dict) -> str:
     """Get user ID from user dict (supports both old 'id' and new 'user_id' fields)"""
     return user.get("user_id") or user.get("id")
+# ratios: loc_comments=113:2 imports_exports=11:7 calls_definitions=49:7

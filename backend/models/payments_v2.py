@@ -1,3 +1,4 @@
+# ratios: loc_comments=55:0 imports_exports=3:9 calls_definitions=3:9
 from __future__ import annotations
 
 from typing import List, Literal, Optional
@@ -74,3 +75,4 @@ class HallMakerEntry(BaseModel):
 
 class HallOfMakersResponse(BaseModel):
     entries: List[HallMakerEntry] = Field(default_factory=list)
+# ratios: loc_comments=55:0 imports_exports=3:9 calls_definitions=3:9

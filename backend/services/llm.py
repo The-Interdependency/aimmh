@@ -1,3 +1,4 @@
+# ratios: loc_comments=296:18 imports_exports=9:9 calls_definitions=58:10
 """LLM integration service — Emergent + OpenAI-compatible providers.
 
 Model registry defines which provider/auth to use for each model.
@@ -354,3 +355,4 @@ async def validate_universal_key() -> dict:
         msg = str(e)
         status = "invalid" if any(w in msg.lower() for w in ["invalid", "auth", "unauthorized", "401"]) else "error"
         return {"status": status, "message": msg}
+# ratios: loc_comments=296:18 imports_exports=9:9 calls_definitions=58:10

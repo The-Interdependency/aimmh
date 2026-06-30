@@ -1,3 +1,4 @@
+# ratios: loc_comments=192:8 imports_exports=8:9 calls_definitions=81:10
 """Model registry management — add/remove developers and models."""
 
 from datetime import datetime, timezone
@@ -230,3 +231,4 @@ async def verify_registry_all(current_user: dict = Depends(get_current_user)):
     doc = await _get_or_seed_registry(uid)
     registry = doc.get("developers", {})
     return await verify_registry(current_user, registry, mode="light")
+# ratios: loc_comments=192:8 imports_exports=8:9 calls_definitions=81:10

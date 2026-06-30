@@ -1,3 +1,4 @@
+# ratios: loc_comments=25:2 imports_exports=3:3 calls_definitions=0:3
 from pydantic import BaseModel
 from typing import Optional, Dict, Any, List
 from datetime import datetime
@@ -31,3 +32,4 @@ class A0Config(BaseModel):
     api_key: str = ""
     route_via_a0: bool = False
     auto_ingest: bool = False
+# ratios: loc_comments=25:2 imports_exports=3:3 calls_definitions=0:3

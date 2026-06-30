@@ -1,3 +1,4 @@
+# ratios: loc_comments=571:67 imports_exports=15:12 calls_definitions=248:20
 """V1 a0 API — Core multi-model hub endpoints.
 
 Endpoints:
@@ -766,3 +767,4 @@ async def submit_feedback(
         "type": "feedback", "message_id": request.message_id, "feedback": request.feedback,
     })
     return {"message": "Feedback submitted"}
+# ratios: loc_comments=571:67 imports_exports=15:12 calls_definitions=248:20

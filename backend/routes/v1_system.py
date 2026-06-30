@@ -1,3 +1,4 @@
+# ratios: loc_comments=70:3 imports_exports=3:5 calls_definitions=13:5
 """V1 System endpoints — health, version, PTCA schema."""
 
 from fastapi import APIRouter
@@ -84,3 +85,4 @@ async def list_available_models():
 @router.get("/ai-instructions")
 async def ai_instructions_v1():
     return get_ai_instruction_payload()
+# ratios: loc_comments=70:3 imports_exports=3:5 calls_definitions=13:5

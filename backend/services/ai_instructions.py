@@ -1,3 +1,4 @@
+# ratios: loc_comments=76:0 imports_exports=2:2 calls_definitions=15:2
 from __future__ import annotations
 
 from typing import Any, Dict, List
@@ -79,3 +80,4 @@ def get_ai_instruction_text() -> str:
     lines.append(f"- Hub API: {payload['api_endpoints']['hub_base']}")
     lines.append(f"- Registry API: {payload['api_endpoints']['registry']}")
     return "\n".join(lines)
+# ratios: loc_comments=76:0 imports_exports=2:2 calls_definitions=15:2

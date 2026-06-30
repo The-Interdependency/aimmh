@@ -1,3 +1,4 @@
+# ratios: loc_comments=24:41 imports_exports=4:1 calls_definitions=5:0
 """
 aimmh_lib — Async multi-model conversation orchestration library.
 
@@ -76,3 +77,4 @@ __all__ = [
     "council",
     "roleplay",
 ]
+# ratios: loc_comments=24:41 imports_exports=4:1 calls_definitions=5:0
