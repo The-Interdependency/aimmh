@@ -1,4 +1,4 @@
-# ratios: loc_comments=296:18 imports_exports=9:9 calls_definitions=58:10
+# ratios: loc_comments=296:18 imports_exports=10:9 calls_definitions=58:10
 """LLM integration service — Emergent + OpenAI-compatible providers.
 
 Model registry defines which provider/auth to use for each model.
@@ -15,6 +15,8 @@ from copy import deepcopy
 from typing import Any, AsyncGenerator, Dict, List, Optional
 
 from emergentintegrations.llm.chat import LlmChat, UserMessage
+
+from services.secrets import decrypt_secret
 
 logger = logging.getLogger(__name__)
 
@@ -177,7 +179,12 @@ def get_api_key_for_developer(user: dict, developer_id: str) -> str:
     Others use user-provided keys.
     """
     user_keys = user.get("api_keys", {})
-    user_key = user_keys.get(developer_id, "")
+    try:
+        user_key = decrypt_secret(user_keys.get(developer_id, ""))
+    except Exception:
+        # Stored key cannot be decrypted (misconfigured API_KEY_ENCRYPTION_KEY);
+        # fail closed to the managed/empty path rather than crashing the call.
+        user_key = ""
 
     emergent_devs = {"openai", "anthropic", "google"}
     if developer_id in emergent_devs:
@@ -355,4 +362,4 @@ async def validate_universal_key() -> dict:
         msg = str(e)
         status = "invalid" if any(w in msg.lower() for w in ["invalid", "auth", "unauthorized", "401"]) else "error"
         return {"status": status, "message": msg}
-# ratios: loc_comments=296:18 imports_exports=9:9 calls_definitions=58:10
+# ratios: loc_comments=296:18 imports_exports=10:9 calls_definitions=58:10
