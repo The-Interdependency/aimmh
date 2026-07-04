@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import os
 
-from cryptography.fernet import Fernet, InvalidToken
+from cryptography.fernet import Fernet
 
 _PREFIX = "enc:v1:"
 
@@ -58,11 +58,17 @@ def decrypt_secret(value: str) -> str:
     values are returned unchanged so existing records keep working."""
     if not value or not value.startswith(_PREFIX):
         return value
-    f = _fernet()
+    try:
+        f = _fernet()
+    except Exception as exc:
+        # Malformed API_KEY_ENCRYPTION_KEY (wrong length/encoding) makes
+        # Fernet(...) raise before we can decrypt; surface it as a decryption
+        # error so callers produce a structured response, not a 500.
+        raise SecretDecryptionError("API_KEY_ENCRYPTION_KEY is invalid; cannot decrypt stored secret") from exc
     if f is None:
         raise SecretDecryptionError("API_KEY_ENCRYPTION_KEY is not configured; cannot decrypt stored secret")
     try:
         return f.decrypt(value[len(_PREFIX):].encode()).decode()
-    except InvalidToken as exc:
+    except Exception as exc:
         raise SecretDecryptionError("stored secret could not be decrypted (wrong API_KEY_ENCRYPTION_KEY?)") from exc
 # ratios: loc_comments=27:18 imports_exports=2:4 calls_definitions=8:4
