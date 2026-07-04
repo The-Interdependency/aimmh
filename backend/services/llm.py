@@ -16,7 +16,7 @@ from typing import Any, AsyncGenerator, Dict, List, Optional
 
 from emergentintegrations.llm.chat import LlmChat, UserMessage
 
-from services.secrets import decrypt_secret
+from services.secrets import SecretDecryptionError, decrypt_secret
 
 logger = logging.getLogger(__name__)
 
@@ -322,7 +322,15 @@ async def generate_response(
         yield f"[ERROR] Unknown model: {model_id}. Add it via the model registry."
         return
 
-    api_key = get_api_key_for_developer(user, info["developer_id"])
+    try:
+        api_key = get_api_key_for_developer(user, info["developer_id"])
+    except SecretDecryptionError:
+        # Stored BYOK key cannot be decrypted (missing/rotated
+        # API_KEY_ENCRYPTION_KEY). Surface a structured error via the [ERROR]
+        # convention instead of a shared-key fallback or an unhandled 500.
+        yield (f"[ERROR] Stored API key for {info['developer_id']} could not be decrypted. "
+               f"Re-enter it in Settings, or fix API_KEY_ENCRYPTION_KEY.")
+        return
     if not api_key:
         yield f"[ERROR] No API key for {info['developer_id']}. Add one in Settings."
         return

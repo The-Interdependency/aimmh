@@ -21,6 +21,15 @@ from cryptography.fernet import Fernet, InvalidToken
 _PREFIX = "enc:v1:"
 
 
+class SecretDecryptionError(RuntimeError):
+    """A stored ciphertext could not be decrypted (missing/rotated/invalid key).
+
+    Callers should convert this into a structured error for the caller (e.g. an
+    ``[ERROR]`` stream chunk or a failed verification) rather than falling back
+    to a shared key or letting it surface as an unhandled 500.
+    """
+
+
 def _fernet() -> Fernet | None:
     key = os.environ.get("API_KEY_ENCRYPTION_KEY")
     if not key:
@@ -51,9 +60,9 @@ def decrypt_secret(value: str) -> str:
         return value
     f = _fernet()
     if f is None:
-        raise RuntimeError("API_KEY_ENCRYPTION_KEY is not configured; cannot decrypt stored secret")
+        raise SecretDecryptionError("API_KEY_ENCRYPTION_KEY is not configured; cannot decrypt stored secret")
     try:
         return f.decrypt(value[len(_PREFIX):].encode()).decode()
     except InvalidToken as exc:
-        raise RuntimeError("stored secret could not be decrypted (wrong API_KEY_ENCRYPTION_KEY?)") from exc
+        raise SecretDecryptionError("stored secret could not be decrypted (wrong API_KEY_ENCRYPTION_KEY?)") from exc
 # ratios: loc_comments=27:18 imports_exports=2:4 calls_definitions=8:4
