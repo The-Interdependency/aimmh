@@ -29,9 +29,11 @@ async def list_key_status(current_user: dict = Depends(get_current_user)):
         try:
             key = decrypt_secret(user_keys.get(dev_id, ""))
         except Exception:
-            # Stored value cannot be decrypted (misconfigured key); treat as
-            # opaque — status stays "configured" but the mask is not derivable.
-            key = user_keys.get(dev_id, "")
+            # A stored key exists but cannot be decrypted (missing/rotated
+            # API_KEY_ENCRYPTION_KEY). Report it as needing attention rather
+            # than "configured" so the UI prompts a fix / re-entry.
+            results.append(KeyStatusResponse(developer_id=dev_id, status="error"))
+            continue
         auth_type = DEFAULT_REGISTRY[dev_id].get("auth_type", "emergent")
 
         if auth_type == "emergent":

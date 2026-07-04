@@ -179,12 +179,11 @@ def get_api_key_for_developer(user: dict, developer_id: str) -> str:
     Others use user-provided keys.
     """
     user_keys = user.get("api_keys", {})
-    try:
-        user_key = decrypt_secret(user_keys.get(developer_id, ""))
-    except Exception:
-        # Stored key cannot be decrypted (misconfigured API_KEY_ENCRYPTION_KEY);
-        # fail closed to the managed/empty path rather than crashing the call.
-        user_key = ""
+    # Let a decryption failure propagate: a user who configured BYOK must not be
+    # silently downgraded to the shared EMERGENT_LLM_KEY when their stored key
+    # cannot be decrypted (missing/rotated API_KEY_ENCRYPTION_KEY). Empty and
+    # legacy-plaintext values pass through without raising.
+    user_key = decrypt_secret(user_keys.get(developer_id, ""))
 
     emergent_devs = {"openai", "anthropic", "google"}
     if developer_id in emergent_devs:
