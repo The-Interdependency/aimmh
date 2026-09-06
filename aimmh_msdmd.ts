@@ -4,5 +4,5 @@ export default defineMsdmdCollection({
   "declarations": [],
   "edges": [],
   "gaps": [],
-  "repo": "aimmh"
+  "repo": "The-Interdependency/aimmh"
 });
